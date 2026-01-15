@@ -1,6 +1,8 @@
 # tobytran.art
 Artist's portfolio and shop for Toby Tran.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49c86271-1fa1-4f1d-8f65-0e5c3d5837bf/deploy-status)](https://app.netlify.com/projects/tobytranart/deploys)
+
 ## Tech Stack
 - **Framework**: Gatsby (React)
 - **Styling**: Tailwind
