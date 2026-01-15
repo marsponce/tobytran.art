@@ -30,4 +30,4 @@ tobytran.art/
 └── gatsby-config.js    # Gatsby configuration
 ```
 ## Contact
-Please reach out to <a href="mailto:mars@marsponce.ca">mars@marsponce.ca</a> (Developer) or <a href="mailto:toby@tobytran.art">toby@tobytran.art</a> if you have any questions.
+Please reach out to <a href="mailto:mars@marsponce.ca">mars@marsponce.ca</a> (Developer) or <a href="mailto:toby@tobytran.art">toby@tobytran.art</a> (Artist) if you have any questions.
