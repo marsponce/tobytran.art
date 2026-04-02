@@ -16,7 +16,14 @@ npx prettier $STAGED_FILES --write --ignore-unknown
 # Re-stage any files that Prettier reformatted
 git update-index --again
 
-# 2. Run TypeScript type check
+# 2. Run ESLint on staged JS/TS files
+echo "ESLint check..."
+echo "$STAGED_FILES" | grep -E '\.(js|ts|tsx)$' | xargs npx eslint --max-warnings=0
+
+# Re-stage any files that ESLint fixed
+git update-index --again
+
+# 3. Run TypeScript type check
 echo "TypeScript type check..."
 npx tsc --noEmit --skipLibCheck
 
