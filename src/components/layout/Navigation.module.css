@@ -21,9 +21,7 @@
   color: var(--color-accent);
 }
 
-.nav a.activeLink,
-.soc a.activeLink,
-.navindex a.activeLink {
+a.activeLink {
   color: var(--color-accent);
   font-weight: bold;
 }

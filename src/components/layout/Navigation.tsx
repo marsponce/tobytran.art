@@ -23,6 +23,18 @@ const NavLinks = [
     label: 'About',
   },
   {
+    href: '/fiber-art',
+    label: 'Fiber Art',
+  },
+  {
+    href: '/visual-art',
+    label: 'Visual Art',
+  },
+  {
+    href: '/blog',
+    label: 'Blog',
+  },
+  {
     href: '/contact',
     label: 'Contact',
   },
