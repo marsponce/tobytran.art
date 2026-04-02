@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-// import { usePathname } from "next/navigation";
-// import clsx from "clsx";
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 import { FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import styles from './Navigation.module.css';
 
 type NavLink = {
   href: string;
@@ -21,24 +22,34 @@ const NavLinks = [
     href: '/about',
     label: 'About',
   },
+  {
+    href: '/contact',
+    label: 'Contact',
+  },
 ] as NavLink[];
 
 export function Nav() {
-  // const pathname = usePathname();
+  const pathname = usePathname();
+  const isIndex = pathname === '/';
 
   return (
-    <nav>
+    <nav className={clsx(isIndex ? styles.navIndex : styles.nav)}>
       <ul>
         {NavLinks.map(({ href, label, icon }) => {
-          // const isActive = pathname === href;
+          const isActive = pathname === href;
 
           return (
             <li key={label}>
-              <Link key={href} href={href} aria-label={label}>
+              <Link
+                key={href}
+                href={href}
+                aria-label={label}
+                className={clsx(isActive && styles.activeLink)}
+              >
                 {icon ? (
                   <>
                     {icon}
-                    {label}
+                    <span className="sr-only">{label}</span>
                   </>
                 ) : (
                   label
@@ -67,7 +78,7 @@ const SocLinks = [
 
 export function Socials() {
   return (
-    <nav>
+    <nav className={styles.soc}>
       <ul>
         {SocLinks.map(({ href, label, icon }) => {
           // const isActive = pathname === href;
@@ -78,10 +89,12 @@ export function Socials() {
                 {icon ? (
                   <>
                     {icon}
-                    {label}
+                    <span className="sr-only">{label}</span>
                   </>
                 ) : (
-                  label
+                  <>
+                    <span className="sr-only">{label}</span>
+                  </>
                 )}
               </Link>
             </li>

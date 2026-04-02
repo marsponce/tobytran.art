@@ -1,0 +1,46 @@
+/* /src/components/layout/Navigation.module.css */
+
+.nav ul,
+.soc ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav a,
+.soc a,
+.navIndex a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav a:hover,
+.soc a:hover,
+.navIndex a:hover {
+  color: var(--color-accent);
+}
+
+.nav a.activeLink,
+.soc a.activeLink,
+.navindex a.activeLink {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.navIndex ul {
+  margin: 25px 100px 25px 100px;
+  height: 100vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.navIndex ul li:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.navIndex ul li:nth-child(even) {
+  align-self: flex-end;
+}
