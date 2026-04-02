@@ -2,7 +2,7 @@
 
 export default function Index() {
   return (
-    <main>
+    <main className="wip">
       <h1>tobytran.art</h1>
       <br />
       <p>This site is currently under construction.</p>
