@@ -1,5 +1,10 @@
 /* /src/components/layout/Navigation.module.css */
 
+.soc {
+  width: 100vw;
+  padding: 10px 0px 10px 0px;
+}
+
 .nav ul,
 .soc ul {
   list-style: none;
@@ -27,7 +32,7 @@ a.activeLink {
 }
 
 .navIndex ul {
-  margin: 25px 100px 25px 100px;
+  padding: 0px 100px 0px 100px;
   height: 100vh;
   list-style: none;
   display: flex;
