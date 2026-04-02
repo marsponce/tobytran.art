@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import { Header, Footer, Nav } from '@/components/layout';
 
 export const metadata: Metadata = {
   title: 'tobytran.art',
@@ -13,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header>
+          <Nav />
+        </Header>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
