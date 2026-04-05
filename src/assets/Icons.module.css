@@ -1,0 +1,125 @@
+/* /src/assets/icons.module.css */
+
+.wrapper {
+  --icon-scale: 1;
+  --contact-scale: 2.5;
+  --art-scale: 0.95;
+  position: relative;
+  display: inline-block;
+  width: 256px;
+  height: 256px;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.svg {
+  position: relative;
+  z-index: 0;
+  transform: translateX(10px) translateY(10px) scale(var(--icon-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.contactSvg {
+  position: relative;
+  transform: translateX(290px) translateY(40px) scale(var(--contact-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.artSvg {
+  position: relative;
+  transform: translateX(15px) translateY(30px) scale(var(--art-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.curvedText {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.wrapper:active {
+  .svg {
+    filter: drop-shadow(0px 4px 6px var(--color-shadow));
+    transform: translateX(5px) translateY(5px)
+      scale(calc(var(--icon-scale) * 1.15));
+  }
+
+  .contactSvg {
+    transform: translateX(150px) translateY(30px)
+      scale(calc(var(--contact-scale) * 1.15));
+    filter: drop-shadow(0px 8px 12px var(--color-shadow));
+  }
+
+  .artSvg {
+    transform: translateX(5px) translateY(5px)
+      scale(calc(var(--art-scale) * 1.15));
+    filter: drop-shadow(0px 8px 12px var(--color-shadow));
+  }
+
+  .bg {
+    transform: scale(calc(var(--icon-scale) * 1.15));
+  }
+
+  .curvedText {
+    transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    --icon-scale: 1.5;
+    --contact-scale: 2.5;
+  }
+  .wrapper:hover,
+  .wrapper:active {
+    .svg {
+      filter: drop-shadow(0px 4px 6px var(--color-shadow));
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--icon-scale) * 1.15));
+    }
+
+    .contactSvg {
+      transform: translateX(150px) translateY(30px)
+        scale(calc(var(--contact-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .artSvg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--art-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .bg {
+      transform: scale(calc(var(--icon-scale) * 1.15));
+    }
+
+    .curvedText {
+      transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
+    }
+  }
+}
