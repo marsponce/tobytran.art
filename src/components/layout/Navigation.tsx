@@ -57,28 +57,36 @@ export function Nav() {
   return (
     <nav className={clsx(isIndex ? styles.navIndex : styles.nav)}>
       <ul>
+        {pathname !== '/' && (
+          <li>
+            <Link href="/" aria-label="back">
+              Back
+            </Link>
+          </li>
+        )}
         {NavLinks.map(({ href, label, icon }) => {
           const isActive = pathname === href;
-
-          return (
-            <li key={label}>
-              <Link
-                key={href}
-                href={href}
-                aria-label={label}
-                className={clsx(isActive && styles.activeLink)}
-              >
-                {icon ? (
-                  <>
-                    {icon}
-                    <span className="sr-only">{label}</span>
-                  </>
-                ) : (
-                  label
-                )}
-              </Link>
-            </li>
-          );
+          if (pathname === href || isIndex) {
+            return (
+              <li key={label}>
+                <Link
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  className={clsx(isActive && styles.activeLink)}
+                >
+                  {icon ? (
+                    <>
+                      {icon}
+                      <span className="sr-only">{label}</span>
+                    </>
+                  ) : (
+                    label
+                  )}
+                </Link>
+              </li>
+            );
+          } else return null;
         })}
       </ul>
     </nav>
