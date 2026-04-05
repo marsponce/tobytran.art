@@ -10,15 +10,18 @@ import logoSVG from './logo.svg';
 import visSVG from './vis.svg';
 import fiberSVG from './fiber.svg';
 import shopSVG from './shop.svg';
+import blogSVG from './blog.svg';
 
 import contactBG from './bg/contactbg.svg';
 import aboutBG from './bg/aboutbg.svg';
 import visBG from './bg/visualbg.svg';
 import fiberBG from './bg/fiberbg.svg';
 import shopBG from './bg/shopbg.svg';
+import blogBG from './bg/blogbg.svg';
 
 import styles from './Icons.module.css';
 import dynamic from 'next/dynamic';
+import { useEffect, useRef } from 'react';
 
 const ReactCurvedText = dynamic(() => import('react-curved-text'), {
   ssr: false,
@@ -29,9 +32,31 @@ interface IconProps {
   className?: string;
 }
 
+function useInView(options?: IntersectionObserverInit) {
+  /* expand on mobile */
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => el.classList.toggle(styles.inView, entry.isIntersecting),
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0, ...options }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [options]);
+
+  return ref;
+}
+
 export function AboutIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
+
   return (
-    <div className={clsx(className ?? '', styles.wrapper)}>
+    <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
       <Image
         src={aboutBG}
         alt=""
@@ -66,8 +91,10 @@ export function AboutIcon({ size = 256, className }: IconProps) {
 }
 
 export function ContactIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
   return (
     <div
+      ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -106,8 +133,10 @@ export function ContactIcon({ size = 256, className }: IconProps) {
 }
 
 export function LogoIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
   return (
     <div
+      ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -124,8 +153,10 @@ export function LogoIcon({ size = 256, className }: IconProps) {
 }
 
 export function ShopIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
   return (
     <div
+      ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -164,8 +195,10 @@ export function ShopIcon({ size = 256, className }: IconProps) {
 }
 
 export function VisIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
   return (
     <div
+      ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -205,8 +238,10 @@ export function VisIcon({ size = 256, className }: IconProps) {
 }
 
 export function FiberIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
   return (
     <div
+      ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -240,6 +275,49 @@ export function FiberIcon({ size = 256, className }: IconProps) {
         startOffset={100}
         tspanProps={{}}
         text="fiber art"
+      />
+    </div>
+  );
+}
+
+export function BlogIcon({ size = 256, className }: IconProps) {
+  const wrapperRef = useInView();
+  return (
+    <div
+      ref={wrapperRef}
+      style={{ width: size, height: size }}
+      className={clsx(className ?? '', styles.wrapper)}
+    >
+      <Image
+        src={blogBG}
+        alt=""
+        aria-hidden
+        width={size}
+        height={size}
+        className={styles.bg}
+        priority
+      />
+      <Image
+        src={blogSVG}
+        alt="Blog Clam"
+        width={size}
+        height={size}
+        className={styles.artSvg}
+        priority
+      />
+
+      <ReactCurvedText
+        svgProps={{ className: styles.curvedText }}
+        width={size}
+        height={size}
+        reversed={true}
+        cx={size / 2}
+        cy={size / 2}
+        rx={size * 0.4}
+        ry={size * 0.4}
+        startOffset={100}
+        tspanProps={{}}
+        text="blog"
       />
     </div>
   );

@@ -46,7 +46,7 @@ const NavLinks = [
   {
     href: '/blog',
     label: 'Blog',
-    //    icon: <Icons.BlogIcon />,
+    icon: <Icons.BlogIcon />,
   },
 ] as NavLink[];
 
@@ -66,27 +66,36 @@ export function Nav() {
         )}
         {NavLinks.map(({ href, label, icon }) => {
           const isActive = pathname === href;
-          if (pathname === href || isIndex) {
-            return (
-              <li key={label}>
-                <Link
-                  key={href}
-                  href={href}
+          if (!isActive && !isIndex) return null;
+
+          const content = icon ? (
+            <>
+              <h1>
+                {icon}
+                <span className="sr-only">{label}</span>
+              </h1>
+            </>
+          ) : (
+            <h1>{label}</h1>
+          );
+
+          return (
+            <li key={label}>
+              {isActive ? (
+                <button
+                  aria-current="page"
                   aria-label={label}
-                  className={clsx(isActive && styles.activeLink)}
+                  className={styles.activeLink}
                 >
-                  {icon ? (
-                    <>
-                      {icon}
-                      <span className="sr-only">{label}</span>
-                    </>
-                  ) : (
-                    label
-                  )}
+                  {content}
+                </button>
+              ) : (
+                <Link href={href} aria-label={label}>
+                  {content}
                 </Link>
-              </li>
-            );
-          } else return null;
+              )}
+            </li>
+          );
         })}
       </ul>
     </nav>
