@@ -11,10 +11,13 @@
 
 :root {
   /* Color scheme variables */
-  --color-background: #ffffff;
+  --color-background: #d9e9ff;
   --color-text: #000000;
   --color-accent: #999999;
   --color-border: #e0e0e0;
+
+  --color-primary: #123456;
+  --color-shadow: #6c6cc24d; /* 4d */
 
   /* Typography */
   --font-body: system-ui, sans-serif;

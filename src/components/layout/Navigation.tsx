@@ -1,3 +1,5 @@
+// /src/components/layouts/Navigation.tsx
+
 'use client';
 
 import Link from 'next/link';
@@ -6,6 +8,8 @@ import clsx from 'clsx';
 import { FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import styles from './Navigation.module.css';
+
+import * as Icons from '@/assets/Icons';
 
 type NavLink = {
   href: string;
@@ -17,26 +21,32 @@ const NavLinks = [
   {
     href: '/',
     label: 'Home',
+    icon: <Icons.LogoIcon />,
   },
   {
     href: '/about',
     label: 'About',
+    icon: <Icons.AboutIcon />,
   },
   {
     href: '/fiber-art',
     label: 'Fiber Art',
-  },
-  {
-    href: '/visual-art',
-    label: 'Visual Art',
-  },
-  {
-    href: '/blog',
-    label: 'Blog',
+    icon: <Icons.FiberIcon />,
   },
   {
     href: '/contact',
     label: 'Contact',
+    icon: <Icons.ContactIcon />,
+  },
+  {
+    href: '/visual-art',
+    label: 'Visual Art',
+    icon: <Icons.VisIcon />,
+  },
+  {
+    href: '/blog',
+    label: 'Blog',
+    //    icon: <Icons.BlogIcon />,
   },
 ] as NavLink[];
 
@@ -96,7 +106,7 @@ export function Socials() {
           // const isActive = pathname === href;
 
           return (
-            <li key={label}>
+            <li key={label} className={styles.socItem}>
               <Link key={href} href={href} aria-label={label}>
                 {icon ? (
                   <>
