@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header, Footer, Nav, Socials } from '@/components/layout';
+import styles from './layout.module.css';
 
 export const metadata: Metadata = {
   title: 'tobytran.art',
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={styles.pageWrapper}>
         <Header>
           <Nav />
         </Header>

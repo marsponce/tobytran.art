@@ -1,0 +1,10 @@
+/* /src/app/Layout.module.css */
+
+.pageWrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
