@@ -8,14 +8,12 @@
 
   @media (min-width: 768px) {
     --icon-scale: 1.5;
-    --contact-scale: 4;
+    --contact-scale: 3.75;
     --art-scale: 1;
   }
 
   position: relative;
   display: inline-block;
-  width: 256px;
-  height: 256px;
 }
 
 /* prevent right-click downloading */
@@ -74,7 +72,7 @@
 
 .curvedText {
   font-family: var(--font-heading);
-  fill: var(--color-quinary);
+  fill: var(--color-sextary);
   stroke: var(--color-secondary);
   stroke-width: 3;
   overflow: visible;
@@ -109,7 +107,7 @@
     }
 
     .contactSvg {
-      transform: translateX(150px) translateY(30px)
+      transform: translateX(200px) translateY(30px)
         scale(calc(var(--contact-scale) * 1.15));
       filter: drop-shadow(0px 8px 12px var(--color-shadow));
     }

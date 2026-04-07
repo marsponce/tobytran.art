@@ -83,7 +83,7 @@ export function AboutIcon({ size = 256, className, forceInView }: IconProps) {
         alt="About Sunfish"
         width={size}
         height={size}
-        className={styles.svg}
+        className={styles.artSvg}
         priority
       />
       <ReactCurvedText
