@@ -14,39 +14,39 @@ import * as Icons from '@/assets/Icons';
 type NavLink = {
   href: string;
   label: string;
-  icon?: React.ReactNode;
+  icon?: React.ComponentType<{ forceInView?: boolean }> | React.ReactNode;
 };
 
 const NavLinks = [
   {
     href: '/',
     label: 'Home',
-    icon: <Icons.LogoIcon />,
+    icon: Icons.LogoIcon,
   },
   {
     href: '/about',
     label: 'About',
-    icon: <Icons.AboutIcon />,
+    icon: Icons.AboutIcon,
   },
   {
     href: '/fiber-art',
     label: 'Fiber Art',
-    icon: <Icons.FiberIcon />,
+    icon: Icons.FiberIcon,
   },
   {
     href: '/contact',
     label: 'Contact',
-    icon: <Icons.ContactIcon />,
+    icon: Icons.ContactIcon,
   },
   {
     href: '/visual-art',
     label: 'Visual Art',
-    icon: <Icons.VisIcon />,
+    icon: Icons.VisIcon,
   },
   {
     href: '/blog',
     label: 'Blog',
-    icon: <Icons.BlogIcon />,
+    icon: Icons.BlogIcon,
   },
 ] as NavLink[];
 
@@ -68,10 +68,12 @@ export function Nav() {
           const isActive = pathname === href;
           if (!isActive && !isIndex) return null;
 
+          const Icon = icon as React.ComponentType<{ forceInView?: boolean }>;
+
           const content = icon ? (
             <>
               <h1>
-                {icon}
+                <Icon forceInView={!isIndex} />
                 <span className="sr-only">{label}</span>
               </h1>
             </>

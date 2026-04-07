@@ -7,6 +7,7 @@
 
 .nav ul,
 .soc ul {
+  padding-top: 5em;
   list-style: none;
   display: flex;
   justify-content: center;
@@ -54,13 +55,13 @@
 }
 
 .navIndex ul {
-  padding: 0px 25px 0px 25px;
+  padding: 0px 3em 0 3em;
   min-height: 100vh;
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 2em;
+  gap: 5em;
 }
 
 .navIndex ul li:nth-child(odd) {

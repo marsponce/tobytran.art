@@ -30,15 +30,28 @@ const ReactCurvedText = dynamic(() => import('react-curved-text'), {
 interface IconProps {
   size?: number;
   className?: string;
+  forceInView?: boolean;
 }
 
-function useInView(options?: IntersectionObserverInit) {
+interface useInViewOptions extends IntersectionObserverInit {
+  forceInView?: boolean;
+}
+
+function useInView(options?: useInViewOptions) {
   /* expand on mobile */
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    if (options?.forceInView) {
+      el.classList.add(styles.inView);
+      return;
+    }
+
+    const isMobile = window.matchMedia('(hover: none)').matches;
+    if (!isMobile) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => el.classList.toggle(styles.inView, entry.isIntersecting),
@@ -52,9 +65,8 @@ function useInView(options?: IntersectionObserverInit) {
   return ref;
 }
 
-export function AboutIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
-
+export function AboutIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
       <Image
@@ -90,8 +102,8 @@ export function AboutIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function ContactIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function ContactIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
@@ -132,8 +144,8 @@ export function ContactIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function LogoIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function LogoIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
@@ -152,8 +164,8 @@ export function LogoIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function ShopIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function ShopIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
@@ -194,8 +206,8 @@ export function ShopIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function VisIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function VisIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
@@ -237,8 +249,8 @@ export function VisIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function FiberIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function FiberIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
@@ -280,8 +292,8 @@ export function FiberIcon({ size = 256, className }: IconProps) {
   );
 }
 
-export function BlogIcon({ size = 256, className }: IconProps) {
-  const wrapperRef = useInView();
+export function BlogIcon({ size = 256, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}

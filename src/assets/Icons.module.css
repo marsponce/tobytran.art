@@ -137,7 +137,8 @@
 /* pointer devices */
 @media (hover: hover) {
   .wrapper:hover,
-  .wrapper:active {
+  .wrapper:active,
+  .wrapper.inView {
     .svg {
       transform: translateX(5px) translateY(5px)
         scale(calc(var(--icon-scale) * 1.15));
@@ -168,7 +169,8 @@
 
 /* Touch devices: active only */
 @media (hover: none) {
-  .wrapper:active {
+  .wrapper:active,
+  .wrapper.inView {
     .svg {
       transform: translateX(5px) translateY(5px)
         scale(calc(var(--icon-scale) * 1.15));
