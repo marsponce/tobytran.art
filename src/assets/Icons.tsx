@@ -83,7 +83,7 @@ export function AboutIcon({ size = 256, className }: IconProps) {
         rx={size * 0.4}
         ry={size * 0.4}
         startOffset={100}
-        tspanProps={{ dy: -10 }}
+        tspanProps={{ dy: 16 }}
         text="about"
       />
     </div>
@@ -116,15 +116,15 @@ export function ContactIcon({ size = 256, className }: IconProps) {
         priority
       />
       <ReactCurvedText
-        svgProps={{ className: styles.curvedText }}
-        width={size}
-        height={size}
-        cx={size / 2}
-        cy={size / 2}
-        rx={size * 0.4}
-        ry={size * 0.4}
-        startOffset={64}
-        tspanProps={{}}
+        svgProps={{ className: clsx(styles.curvedText, styles.contactText) }}
+        width={size * 2}
+        height={size * 2}
+        cx={(size * 2) / 2}
+        cy={(size * 2) / 2}
+        rx={size * 2 * 0.4}
+        ry={size * 2 * 0.4}
+        startOffset={50}
+        tspanProps={{ dy: 16 }}
         reversed={true}
         text="contact"
       />
@@ -187,7 +187,7 @@ export function ShopIcon({ size = 256, className }: IconProps) {
         rx={size * 0.4}
         ry={size * 0.4}
         startOffset={64}
-        tspanProps={{ dy: -10 }}
+        tspanProps={{ dy: 16 }}
         text="shop"
       />
     </div>
@@ -228,8 +228,8 @@ export function VisIcon({ size = 256, className }: IconProps) {
         cy={size / 2}
         rx={size * 0.4}
         ry={size * 0.4}
-        startOffset={64}
-        tspanProps={{}}
+        startOffset={0}
+        tspanProps={{ dy: 16 }}
         reversed={true}
         text="visual art"
       />
@@ -272,8 +272,8 @@ export function FiberIcon({ size = 256, className }: IconProps) {
         cy={size / 2}
         rx={size * 0.4}
         ry={size * 0.4}
-        startOffset={100}
-        tspanProps={{}}
+        startOffset={25}
+        tspanProps={{ dy: 16 }}
         text="fiber art"
       />
     </div>
@@ -315,8 +315,8 @@ export function BlogIcon({ size = 256, className }: IconProps) {
         cy={size / 2}
         rx={size * 0.4}
         ry={size * 0.4}
-        startOffset={100}
-        tspanProps={{}}
+        startOffset={50}
+        tspanProps={{ dy: 16 }}
         text="blog"
       />
     </div>
