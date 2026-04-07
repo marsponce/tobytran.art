@@ -38,9 +38,10 @@
 
   --color-primary: #9ea5f1;
   --color-secondary: #6c5cc2;
-  --color-trinary: #cf7f28;
-  --color-quaternary: #e9e649;
-  --color-quinary: #f0f5ff;
+  --color-trinary: #9bdbfcff;
+  --color-quaternary: #cf7f28;
+  --color-quinary: #e9e649;
+  --color-sextary: #f0f5ff;
   --color-shadow: #6c6cc24d; /* 4d */
 
   /* Typography */
@@ -56,7 +57,13 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  transition: color 0.3s ease;
+  color: var(--color-secondary);
+}
+
+a:hover,
+a:active {
+  color: var(--color-trinary);
 }
 
 footer {
