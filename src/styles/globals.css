@@ -9,6 +9,26 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Plump';
+  src: url('/fonts/PLUMP.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helsinki';
+  src: url('/fonts/hesinki.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Title';
+  src: url('/fonts/Ubuntu-Title.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PUSAB';
+  src: url('/fonts/PUSAB___.ttf') format('opentype');
+}
+
 :root {
   /* Color scheme variables */
   --color-background: #d9e9ff;
@@ -16,12 +36,16 @@
   --color-accent: #999999;
   --color-border: #e0e0e0;
 
-  --color-primary: #123456;
+  --color-primary: #9ea5f1;
+  --color-secondary: #6c5cc2;
+  --color-trinary: #cf7f28;
+  --color-quaternary: #e9e649;
+  --color-quinary: #f0f5ff;
   --color-shadow: #6c6cc24d; /* 4d */
 
   /* Typography */
-  --font-body: system-ui, sans-serif;
-  --font-heading: system-ui, sans-serif;
+  --font-body: 'Ubuntu-Title', sans-serif;
+  --font-heading: 'Plump', sans-serif;
 }
 
 body {
@@ -38,6 +62,12 @@ a {
 footer {
   position: fixed;
   bottom: 0;
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  -webkit-text-stroke: 2pk var(--color-accent);
 }
 
 .sr-only {
