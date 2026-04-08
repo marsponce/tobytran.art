@@ -1,7 +1,10 @@
 /* /src/app/Layout.module.css */
 .wrapper,
 html {
-  overflow: clip;
+  overflow-x: clip;
+  @media (min-width: 768px) {
+    overflow: clip;
+  }
   min-height: 100lvh;
   display: flex;
   flex-direction: column;
