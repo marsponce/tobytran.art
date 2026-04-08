@@ -1,0 +1,11 @@
+/* /src/app/Layout.module.css */
+.wrapper,
+html {
+  overflow-x: hidden;
+  min-height: 100lvh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex: 1;
+  }
+}

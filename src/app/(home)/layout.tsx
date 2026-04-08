@@ -15,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={styles.pageWrapper}>
-        <Header>
+      <body className={styles.wrapper}>
+        <Header className={styles.main}>
           <Nav />
         </Header>
         {children}
