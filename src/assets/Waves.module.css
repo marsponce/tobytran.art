@@ -6,7 +6,7 @@
   top: 0;
   bottom: 0;
   height: 100lvh;
-  z-index: -10;
+  z-index: -2;
 
   --color-wave-start: var(--color-background);
   --color-wave-mid: #679ce6;
