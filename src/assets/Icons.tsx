@@ -57,7 +57,7 @@ function useInView(options?: useInViewOptions) {
 
     const observer = new IntersectionObserver(
       ([entry]) => el.classList.toggle(styles.inView, entry.isIntersecting),
-      { rootMargin: '-50% 0px -50% 0px', threshold: 0, ...options }
+      { rootMargin: '-60% 0px -40% 0px', threshold: 0, ...options }
     );
 
     observer.observe(el);
@@ -83,7 +83,7 @@ export function BackBtnIcon({ size, className, forceInView }: IconProps) {
   );
 }
 
-export function AboutIcon({ size = 256, className, forceInView }: IconProps) {
+export function AboutIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
@@ -120,7 +120,7 @@ export function AboutIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function ContactIcon({ size = 256, className, forceInView }: IconProps) {
+export function ContactIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
@@ -162,7 +162,7 @@ export function ContactIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function LogoIcon({ size = 256, className, forceInView }: IconProps) {
+export function LogoIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
@@ -182,7 +182,7 @@ export function LogoIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function ShopIcon({ size = 256, className, forceInView }: IconProps) {
+export function ShopIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
@@ -224,7 +224,7 @@ export function ShopIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function VisIcon({ size = 256, className, forceInView }: IconProps) {
+export function VisIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
@@ -267,7 +267,7 @@ export function VisIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function FiberIcon({ size = 256, className, forceInView }: IconProps) {
+export function FiberIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
@@ -310,7 +310,7 @@ export function FiberIcon({ size = 256, className, forceInView }: IconProps) {
   );
 }
 
-export function BlogIcon({ size = 256, className, forceInView }: IconProps) {
+export function BlogIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div

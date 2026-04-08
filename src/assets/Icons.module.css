@@ -8,14 +8,16 @@
   --bg-scale: 1;
 
   @media (min-width: 768px) {
-    --icon-scale: 1.75;
+    --icon-scale: 1.3;
     --contact-scale: 3.75;
     --art-scale: 1.25;
-    --bg-scale: 1.5;
+    --bg-scale: 1.3;
   }
 
   position: relative;
   display: inline-block;
+
+  overflow: visible;
 }
 
 /* prevent right-click downloading */
@@ -63,6 +65,7 @@
   transition:
     transform 1s ease,
     filter 1s ease;
+  overflow: visible;
 }
 
 .artSvg {
