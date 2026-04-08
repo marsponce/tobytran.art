@@ -47,69 +47,70 @@
 }
 
 /* mobile styling */
-.navIndex ul {
-  padding: 0px 3em 0 3em;
-  min-height: 100vh;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 5em;
-}
+.navIndex {
+  ul {
+    padding: 0px 3em 0 3em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5em;
 
-.navIndex ul li:nth-child(odd) {
-  align-self: flex-start;
-}
-
-.navIndex ul li:nth-child(even) {
-  align-self: flex-end;
-}
-
-/* desktop styling */
-@media (min-width: 768px) {
-  .navIndex {
-    padding-top: 5em;
-  }
-  .navIndex ul {
-    padding: 0;
-    display: grid;
-    grid-row-gap: 5em;
-    grid-column-gap: 0em;
-    grid-template-columns: auto auto auto auto auto;
+    /* layout for icons */
+    li:nth-child(odd) {
+      align-self: flex-start;
+    }
+    li:nth-child(even) {
+      align-self: flex-end;
+    }
   }
 
-  .navIndex li:nth-child(1) {
-    /* logo */
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
-  .navIndex li:nth-child(2) {
-    /* about */
-    grid-column-start: 4;
-    grid-row-start: 2;
-  }
+  /* desktop styling */
+  @media (min-width: 768px) {
+    inset: 0;
+    ul {
+      padding: 0;
+      width: 100lvw;
+      min-height: 0;
+      justify-items: center;
+      gap: 0 0;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+    }
 
-  .navIndex li:nth-child(3) {
-    /* fiber */
-    grid-column-start: 2;
-    grid-row-start: 2;
-  }
+    li:nth-child(1) {
+      /* logo */
+      grid-column-start: 3;
+      grid-row-start: 1;
+    }
+    li:nth-child(2) {
+      /* about */
+      grid-column-start: 4;
+      grid-row-start: 2;
+    }
 
-  .navIndex li:nth-child(4) {
-    /* contact */
-    grid-column-start: 5;
-    grid-row-start: 3;
-  }
+    li:nth-child(3) {
+      /* fiber */
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
 
-  .navIndex li:nth-child(5) {
-    /* visual */
-    grid-column-start: 1;
-    grid-row-start: 3;
-  }
+    li:nth-child(4) {
+      /* contact */
+      grid-column-start: 5;
+      grid-row-start: 3;
+    }
 
-  .navIndex li:nth-child(6) {
-    /* blog */
-    grid-column-start: 3;
-    grid-row-start: 3;
+    li:nth-child(5) {
+      /* visual */
+      grid-column-start: 1;
+      grid-row-start: 3;
+    }
+
+    li:nth-child(6) {
+      /* blog */
+      grid-column-start: 3;
+      grid-row-start: 3;
+    }
   }
 }
