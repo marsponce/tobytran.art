@@ -66,11 +66,6 @@ a:active {
   color: var(--color-trinary);
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-}
-
 h1 {
   font-family: var(--font-title);
   color: var(--color-primary);

@@ -10,6 +10,7 @@ import { MdEmail } from 'react-icons/md';
 import styles from './Navigation.module.css';
 
 import * as Icons from '@/assets/Icons';
+import Waves from '@/assets/Waves';
 
 type NavLink = {
   href: string;
@@ -56,11 +57,12 @@ export function Nav() {
 
   return (
     <nav className={clsx(isIndex ? styles.navIndex : styles.nav)}>
+      {isIndex && <Waves />}
       <ul>
         {pathname !== '/' && (
           <li>
             <Link href="/" aria-label="back">
-              Back
+              <Icons.BackBtnIcon size={175} />
             </Link>
           </li>
         )}
@@ -108,12 +110,12 @@ const SocLinks = [
   {
     href: 'https://www.instagram.com/toby_culosis/',
     label: 'Instagram',
-    icon: <FaInstagram size={32} color="var(--color-accent)" />,
+    icon: <FaInstagram size={32} />,
   },
   {
     href: 'mailto:info@tobytran.art',
     label: 'EMail',
-    icon: <MdEmail size={32} color="var(--color-accent)" />,
+    icon: <MdEmail size={32} />,
   },
 ] as NavLink[];
 
@@ -125,7 +127,7 @@ export function Socials() {
           // const isActive = pathname === href;
 
           return (
-            <li key={label} className={styles.socItem}>
+            <li key={label}>
               <Link key={href} href={href} aria-label={label}>
                 {icon ? (
                   <>
@@ -141,6 +143,11 @@ export function Socials() {
             </li>
           );
         })}
+        <li>
+          <Link href="/" aria-label="home">
+            tobytran.art
+          </Link>
+        </li>
       </ul>
     </nav>
   );

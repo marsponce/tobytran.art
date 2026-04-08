@@ -1,49 +1,41 @@
 /* /src/components/layout/Navigation.module.css */
 
+/* base styles */
 .soc {
   width: 100vw;
-  padding: 10px 0px 10px 0px;
+  padding: 0;
+  svg {
+    transition: color 0.3s ease;
+    color: var(--color-secondary);
+  }
+
+  svg:hover,
+  svg:active {
+    color: var(--color-trinary);
+  }
+}
+
+.nav {
+  width: 100vw;
+  padding: 1em 0 1em 0;
 }
 
 .nav ul,
 .soc ul {
-  padding-top: 5em;
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
-.socItem {
-  position: relative;
-  background: white;
-  border-radius: 5%;
-}
-
-.socItem::before {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 5%;
-  box-shadow: 0 8px 8px var(--color-shadow);
-}
-
 .nav a,
 .soc a,
 .navIndex a {
-  color: var(--color-text);
   text-decoration: none;
 }
 
-.nav a:hover,
-.soc a:hover,
-.navIndex a:hover {
-  color: var(--color-accent);
-}
-
 .activeLink {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: bold;
 
   /* for button version */
@@ -54,6 +46,7 @@
   font: inherit;
 }
 
+/* mobile styling */
 .navIndex ul {
   padding: 0px 3em 0 3em;
   min-height: 100vh;
@@ -70,4 +63,53 @@
 
 .navIndex ul li:nth-child(even) {
   align-self: flex-end;
+}
+
+/* desktop styling */
+@media (min-width: 768px) {
+  .navIndex {
+    padding-top: 5em;
+  }
+  .navIndex ul {
+    padding: 0;
+    display: grid;
+    grid-row-gap: 5em;
+    grid-column-gap: 0em;
+    grid-template-columns: auto auto auto auto auto;
+  }
+
+  .navIndex li:nth-child(1) {
+    /* logo */
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+  .navIndex li:nth-child(2) {
+    /* about */
+    grid-column-start: 4;
+    grid-row-start: 2;
+  }
+
+  .navIndex li:nth-child(3) {
+    /* fiber */
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  .navIndex li:nth-child(4) {
+    /* contact */
+    grid-column-start: 5;
+    grid-row-start: 3;
+  }
+
+  .navIndex li:nth-child(5) {
+    /* visual */
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  .navIndex li:nth-child(6) {
+    /* blog */
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
 }
