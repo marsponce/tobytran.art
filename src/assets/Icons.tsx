@@ -19,6 +19,8 @@ import fiberBG from './bg/fiberbg.svg';
 import shopBG from './bg/shopbg.svg';
 import blogBG from './bg/blogbg.svg';
 
+import backBtnSvg from './backbtn.svg';
+
 import styles from './Icons.module.css';
 import dynamic from 'next/dynamic';
 import { useEffect, useRef } from 'react';
@@ -63,6 +65,22 @@ function useInView(options?: useInViewOptions) {
   }, [options]);
 
   return ref;
+}
+
+export function BackBtnIcon({ size, className, forceInView }: IconProps) {
+  const wrapperRef = useInView({ forceInView });
+  return (
+    <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
+      <Image
+        src={backBtnSvg}
+        alt="Back Button Icon"
+        width={size}
+        height={size}
+        className={styles.svg}
+        priority
+      />
+    </div>
+  );
 }
 
 export function AboutIcon({ size = 256, className, forceInView }: IconProps) {

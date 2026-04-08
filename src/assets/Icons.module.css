@@ -5,11 +5,13 @@
   --icon-scale: 1;
   --contact-scale: 2.5;
   --art-scale: 0.95;
+  --bg-scale: 1;
 
   @media (min-width: 768px) {
-    --icon-scale: 1.5;
+    --icon-scale: 1.75;
     --contact-scale: 3.75;
-    --art-scale: 1;
+    --art-scale: 1.25;
+    --bg-scale: 1.5;
   }
 
   position: relative;
@@ -35,6 +37,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
+  transform: scale(var(--bg-scale));
 
   transition:
     transform 1s ease,
@@ -67,7 +70,9 @@
   transform: translateX(15px) translateY(30px) scale(var(--art-scale));
   filter: drop-shadow(0px 4px 6px var(--color-shadow));
 
-  transition: transform 1s ease;
+  transition:
+    transform 1s ease,
+    filter 1s ease;
 }
 
 .curvedText {
@@ -119,7 +124,7 @@
     }
 
     .bg {
-      transform: scale(calc(var(--icon-scale) * 1.15));
+      transform: scale(calc(var(--bg-scale) * 1.15));
     }
 
     .curvedText {
@@ -156,7 +161,7 @@
     }
 
     .bg {
-      transform: scale(calc(var(--icon-scale) * 1.15));
+      transform: scale(calc(var(--bg-scale) * 1.15));
     }
 
     .curvedText {
@@ -188,7 +193,7 @@
     }
 
     .bg {
-      transform: scale(calc(var(--icon-scale) * 1.15));
+      transform: scale(calc(var(--bg-scale) * 1.15));
     }
 
     .curvedText {
