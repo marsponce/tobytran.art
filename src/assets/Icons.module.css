@@ -80,6 +80,7 @@
 
 .curvedText {
   font-family: var(--font-heading);
+  font-size: 1.25em;
   fill: var(--color-sextary);
   stroke: var(--color-secondary);
   stroke-width: 3;
@@ -100,13 +101,14 @@
 
 .contactText {
   position: absolute;
-  top: -70;
+  top: -50;
   left: -100;
 }
 
 /* mobile devices */
 @media (pointer: coarse) {
   /* inView state for scrolling auto animation */
+  h1 .wrapper,
   .wrapper.inView {
     .svg {
       transform: translateX(5px) translateY(5px)
@@ -142,6 +144,7 @@
 
 /* pointer devices */
 @media (hover: hover) {
+  h1 .wrapper,
   .wrapper:hover,
   .wrapper:active,
   .wrapper.inView {
@@ -175,6 +178,7 @@
 
 /* Touch devices: active only */
 @media (hover: none) {
+  h1 .wrapper,
   .wrapper:active,
   .wrapper.inView {
     .svg {

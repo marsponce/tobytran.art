@@ -15,39 +15,39 @@ import Waves from '@/assets/Waves';
 type NavLink = {
   href: string;
   label: string;
-  icon?: React.ComponentType<{ forceInView?: boolean }> | React.ReactNode;
+  icon?: React.ReactNode;
 };
 
 const NavLinks = [
   {
     href: '/',
     label: 'Home',
-    icon: Icons.LogoIcon,
+    icon: <Icons.LogoIcon />,
   },
   {
     href: '/about',
     label: 'About',
-    icon: Icons.AboutIcon,
+    icon: <Icons.AboutIcon />,
   },
   {
     href: '/fiber-art',
     label: 'Fiber Art',
-    icon: Icons.FiberIcon,
+    icon: <Icons.FiberIcon />,
   },
   {
     href: '/contact',
     label: 'Contact',
-    icon: Icons.ContactIcon,
+    icon: <Icons.ContactIcon id={styles.contact} />,
   },
   {
     href: '/visual-art',
     label: 'Visual Art',
-    icon: Icons.VisIcon,
+    icon: <Icons.VisIcon />,
   },
   {
     href: '/blog',
     label: 'Blog',
-    icon: Icons.BlogIcon,
+    icon: <Icons.BlogIcon />,
   },
 ] as NavLink[];
 
@@ -61,8 +61,8 @@ export function Nav() {
       <ul>
         {pathname !== '/' && (
           <li>
-            <Link href="/" aria-label="back">
-              <Icons.BackBtnIcon size={175} />
+            <Link href="/" aria-label="back" id={styles.backButton}>
+              <Icons.BackBtnIcon />
             </Link>
           </li>
         )}
@@ -70,34 +70,25 @@ export function Nav() {
           const isActive = pathname === href;
           if (!isActive && !isIndex) return null;
 
-          const Icon = icon as React.ComponentType<{ forceInView?: boolean }>;
-
-          const content = icon ? (
+          const content = isActive ? (
             <>
               <h1>
-                <Icon forceInView={!isIndex} />
+                {icon}
                 <span className="sr-only">{label}</span>
               </h1>
             </>
           ) : (
-            <h1>{label}</h1>
+            <h2>
+              {icon}
+              <span className="sr-only">{label}</span>
+            </h2>
           );
 
           return (
             <li key={label}>
-              {isActive ? (
-                <button
-                  aria-current="page"
-                  aria-label={label}
-                  className={styles.activeLink}
-                >
-                  {content}
-                </button>
-              ) : (
-                <Link href={href} aria-label={label}>
-                  {content}
-                </Link>
-              )}
+              <Link href={href} aria-label={label}>
+                {content}
+              </Link>
             </li>
           );
         })}

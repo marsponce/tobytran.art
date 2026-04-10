@@ -32,6 +32,7 @@ const ReactCurvedText = dynamic(() => import('react-curved-text'), {
 interface IconProps {
   size?: number;
   className?: string;
+  id?: string;
   forceInView?: boolean;
 }
 
@@ -67,7 +68,7 @@ function useInView(options?: useInViewOptions) {
   return ref;
 }
 
-export function BackBtnIcon({ size, className, forceInView }: IconProps) {
+export function BackBtnIcon({ size = 156, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
@@ -120,13 +121,19 @@ export function AboutIcon({ size = 224, className, forceInView }: IconProps) {
   );
 }
 
-export function ContactIcon({ size = 224, className, forceInView }: IconProps) {
+export function ContactIcon({
+  size = 224,
+  className,
+  forceInView,
+  id,
+}: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
     <div
       ref={wrapperRef}
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
+      id={clsx(id ?? '')}
     >
       <Image
         src={contactBG}
