@@ -1,5 +1,5 @@
-// /src/app/page.tsx
+// /src/app/(home)page.tsx
 
 export default function Index() {
-  return <main></main>;
+  return null;
 }

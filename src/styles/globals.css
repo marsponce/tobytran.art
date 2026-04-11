@@ -49,6 +49,25 @@
   --font-heading: 'Plump', sans-serif;
 }
 
+/* global layout styling */
+html {
+  min-height: 100lvh;
+  overflow-x: clip;
+  @media (min-width: 768px) {
+    overflow-y: clip;
+  }
+}
+body {
+  min-height: 100lvh;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);

@@ -1,12 +1,5 @@
-import type { Metadata } from 'next';
-import '@/styles/globals.css';
+// /src/app/(site)/layout.tsx
 import { Header, Footer, Nav, Socials } from '@/components/layout';
-import styles from './layout.module.css';
-
-export const metadata: Metadata = {
-  title: 'tobytran.art',
-  description: "Toby Tran's artist site",
-};
 
 export default function RootLayout({
   children,
@@ -14,16 +7,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={styles.wrapper}>
-        <Header>
-          <Nav />
-        </Header>
-        {children}
-        <Footer>
-          <Socials />
-        </Footer>
-      </body>
-    </html>
+    <>
+      <Header>
+        <Nav />
+      </Header>
+      <main>{children}</main>
+      <Footer>
+        <Socials />
+      </Footer>
+    </>
   );
 }
