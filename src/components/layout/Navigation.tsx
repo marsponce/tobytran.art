@@ -110,16 +110,7 @@ export function Socials() {
           return (
             <li key={label}>
               <Link key={href} href={href} aria-label={label}>
-                {icon ? (
-                  <>
-                    {icon}
-                    <span className="sr-only">{label}</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="sr-only">{label}</span>
-                  </>
-                )}
+                {icon}
               </Link>
             </li>
           );

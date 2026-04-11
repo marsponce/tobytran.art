@@ -136,7 +136,7 @@
   }
 
   #contact {
-    transform: translateY(1.5em);
+    transform: translateY(3em);
   }
 
   @media (min-width: 768px) {
