@@ -70,24 +70,14 @@ export function Nav() {
           const isActive = pathname === href;
           if (!isActive && !isIndex) return null;
 
-          const content = isActive ? (
-            <>
-              <h1>
-                {icon}
-                <span className="sr-only">{label}</span>
-              </h1>
-            </>
-          ) : (
-            <h2>
-              {icon}
-              <span className="sr-only">{label}</span>
-            </h2>
-          );
-
           return (
             <li key={label}>
-              <Link href={href} aria-label={label}>
-                {content}
+              <Link
+                href={href}
+                aria-label={label}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {icon}
               </Link>
             </li>
           );

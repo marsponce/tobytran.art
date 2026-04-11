@@ -71,10 +71,14 @@ function useInView(options?: useInViewOptions) {
 export function BackBtnIcon({ size = 156, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
-    <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
+    <div
+      ref={wrapperRef}
+      aria-hidden="true"
+      className={clsx(className ?? '', styles.wrapper)}
+    >
       <Image
         src={backBtnSvg}
-        alt="Back Button Icon"
+        alt=""
         width={size}
         height={size}
         className={styles.svg}
@@ -87,7 +91,11 @@ export function BackBtnIcon({ size = 156, className, forceInView }: IconProps) {
 export function AboutIcon({ size = 224, className, forceInView }: IconProps) {
   const wrapperRef = useInView({ forceInView });
   return (
-    <div ref={wrapperRef} className={clsx(className ?? '', styles.wrapper)}>
+    <div
+      ref={wrapperRef}
+      aria-hidden="true"
+      className={clsx(className ?? '', styles.wrapper)}
+    >
       <Image
         src={aboutBG}
         alt=""
@@ -131,6 +139,7 @@ export function ContactIcon({
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
       id={clsx(id ?? '')}
@@ -174,6 +183,7 @@ export function LogoIcon({ size = 224, className, forceInView }: IconProps) {
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -194,6 +204,7 @@ export function ShopIcon({ size = 224, className, forceInView }: IconProps) {
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -236,6 +247,7 @@ export function VisIcon({ size = 224, className, forceInView }: IconProps) {
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -279,6 +291,7 @@ export function FiberIcon({ size = 224, className, forceInView }: IconProps) {
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >
@@ -322,6 +335,7 @@ export function BlogIcon({ size = 224, className, forceInView }: IconProps) {
   return (
     <div
       ref={wrapperRef}
+      aria-hidden="true"
       style={{ width: size, height: size }}
       className={clsx(className ?? '', styles.wrapper)}
     >

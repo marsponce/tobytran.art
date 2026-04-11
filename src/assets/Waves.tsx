@@ -11,6 +11,8 @@ export default function Waves() {
       xmlns="http://www.w3.org/2000/svg"
       className={styles.waves}
       preserveAspectRatio="xMidYMax slice"
+      aria-hidden="true"
+      focusable="false"
     >
       <defs>
         <linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%">

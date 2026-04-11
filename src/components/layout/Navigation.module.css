@@ -1,24 +1,45 @@
 /* /src/components/layout/Navigation.module.css */
 
-/* base styles */
 .soc {
+  /* social media footer */
   width: 100vw;
-  padding: 0;
-  svg {
-    transition: color 0.3s ease;
-    color: var(--color-secondary);
-  }
-
-  svg:hover,
-  svg:active {
-    color: var(--color-trinary);
-  }
+  padding-bottom: 1em;
 
   ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 1em;
+
+    li {
+      background: var(--color-background);
+      border-radius: 1em;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25em;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      svg,
+      a {
+        transition: color 0.3s ease;
+        color: var(--color-secondary);
+      }
+
+      a:hover,
+      a:active,
+      svg:hover,
+      svg:active {
+        color: var(--color-trinary);
+      }
+    }
   }
 }
 
