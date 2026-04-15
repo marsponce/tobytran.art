@@ -121,8 +121,9 @@ export function AboutIcon({ size = 224, className, forceInView }: IconProps) {
         cy={size / 2}
         rx={size * 0.4}
         ry={size * 0.4}
-        startOffset={100}
+        startOffset={50}
         tspanProps={{ dy: 16 }}
+        reversed={true}
         text="about"
       />
     </div>
@@ -257,7 +258,7 @@ export function VisIcon({ size = 224, className, forceInView }: IconProps) {
         aria-hidden
         width={size}
         height={size}
-        className={styles.bg}
+        className={styles.artBg}
         priority
       />
       <Image

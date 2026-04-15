@@ -6,11 +6,13 @@
   --contact-scale: 2.5;
   --art-scale: 0.95;
   --bg-scale: 1;
+  --art-bg-scale: 1.4;
 
   @media (min-width: 768px) {
     --icon-scale: 1.3;
     --contact-scale: 3.75;
     --art-scale: 1.25;
+    --art-bg-scale: 1.8;
     --bg-scale: 1.3;
   }
 
@@ -40,6 +42,17 @@
   inset: 0;
   z-index: -1;
   transform: scale(var(--bg-scale));
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.artBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scale(var(--art-bg-scale));
 
   transition:
     transform 1s ease,
@@ -131,6 +144,9 @@
     .bg {
       transform: scale(calc(var(--bg-scale) * 1.15));
     }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
+    }
 
     .curvedText {
       transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
@@ -169,6 +185,9 @@
     .bg {
       transform: scale(calc(var(--bg-scale) * 1.15));
     }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
+    }
 
     .curvedText {
       transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
@@ -201,6 +220,9 @@
 
     .bg {
       transform: scale(calc(var(--bg-scale) * 1.15));
+    }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
     }
 
     .curvedText {

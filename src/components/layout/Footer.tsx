@@ -1,4 +1,5 @@
 // src/app/components/Footer.tsx
+
 type FooterProps = {
   children?: React.ReactNode;
 };
