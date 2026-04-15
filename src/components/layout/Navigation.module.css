@@ -1,0 +1,155 @@
+/* /src/components/layout/Navigation.module.css */
+
+.soc {
+  /* social media footer */
+  width: 100vw;
+  padding-bottom: 1em;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    li {
+      background: var(--color-background);
+      border-radius: 1em;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25em;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      svg,
+      a {
+        transition: color 0.3s ease;
+        color: var(--color-secondary);
+      }
+
+      a:hover,
+      a:active,
+      svg:hover,
+      svg:active {
+        color: var(--color-trinary);
+      }
+    }
+  }
+}
+
+.navIndex {
+  /* nav index page styling */
+  ul {
+    padding: 0px 3em 10em 3em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5em;
+
+    /* layout for icons */
+    li:nth-child(odd) {
+      align-self: flex-start;
+    }
+    li:nth-child(even) {
+      align-self: flex-end;
+    }
+  }
+
+  /* desktop styling */
+  @media (min-width: 768px) {
+    inset: 0;
+    ul {
+      padding: 0;
+      padding-top: 2em;
+      width: 100lvw;
+      min-height: 0;
+      justify-items: center;
+      gap: 0 0;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+    }
+
+    li:nth-child(1) {
+      /* logo */
+      grid-column-start: 3;
+      grid-row-start: 1;
+    }
+    li:nth-child(2) {
+      /* about */
+      grid-column-start: 4;
+      grid-row-start: 2;
+    }
+
+    li:nth-child(3) {
+      /* fiber */
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
+
+    li:nth-child(4) {
+      /* contact */
+      grid-column-start: 5;
+      grid-row-start: 3;
+    }
+
+    li:nth-child(5) {
+      /* visual */
+      grid-column-start: 1;
+      grid-row-start: 3;
+    }
+
+    li:nth-child(6) {
+      /* blog */
+      grid-column-start: 3;
+      grid-row-start: 3;
+    }
+
+    li:nth-child(7) {
+      /* shop */
+    }
+  }
+}
+
+.nav {
+  /* nav on non index pages */
+  width: 100vw;
+  padding: 5em 0 1em 0;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  #backButton {
+    position: absolute;
+    top: -1em;
+    left: 0em;
+  }
+
+  #contact {
+    transform: translateY(3em);
+  }
+
+  @media (min-width: 768px) {
+    padding: 5em 5em 1em 5em;
+    /* desktop styling */
+    ul {
+      justify-content: space-between;
+    }
+
+    #backButton {
+      position: absolute;
+      top: -1em;
+      left: 1em;
+    }
+  }
+}

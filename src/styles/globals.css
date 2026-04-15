@@ -9,16 +9,63 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Plump';
+  src: url('/fonts/PLUMP.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helsinki';
+  src: url('/fonts/hesinki.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu-Title';
+  src: url('/fonts/Ubuntu-Title.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PUSAB';
+  src: url('/fonts/PUSAB___.ttf') format('opentype');
+}
+
 :root {
   /* Color scheme variables */
-  --color-background: #ffffff;
+  --color-background: #d9e9ff;
   --color-text: #000000;
   --color-accent: #999999;
   --color-border: #e0e0e0;
 
+  --color-primary: #9ea5f1;
+  --color-secondary: #6c5cc2;
+  --color-trinary: #9bdbfcff;
+  --color-quaternary: #cf7f28;
+  --color-quinary: #e9e649;
+  --color-sextary: #f0f5ff;
+  --color-shadow: #6c6cc24d; /* 4d */
+
   /* Typography */
-  --font-body: system-ui, sans-serif;
-  --font-heading: system-ui, sans-serif;
+  --font-body: 'Ubuntu-Title', sans-serif;
+  --font-heading: 'Plump', sans-serif;
+}
+
+/* global layout styling */
+html {
+  min-height: 100lvh;
+  overflow-x: clip;
+  @media (min-width: 768px) {
+    overflow-y: clip;
+  }
+}
+body {
+  min-height: 100lvh;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 body {
@@ -29,12 +76,19 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  transition: color 0.3s ease;
+  color: var(--color-secondary);
 }
 
-footer {
-  position: sticky;
-  bottom: 0;
+a:hover,
+a:active {
+  color: var(--color-trinary);
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  -webkit-text-stroke: 2pk var(--color-accent);
 }
 
 .sr-only {

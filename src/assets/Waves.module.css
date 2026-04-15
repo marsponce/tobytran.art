@@ -1,0 +1,14 @@
+/* /src/assets/Waves.module.css */
+
+.waves {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100lvh;
+  z-index: -2;
+
+  --color-wave-start: var(--color-background);
+  --color-wave-mid: #679ce6;
+  --color-wave-end: #5358b8;
+}

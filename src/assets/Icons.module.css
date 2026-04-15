@@ -1,0 +1,232 @@
+/* /src/assets/Icons.module.css */
+
+/* design tokens (per wrapper) */
+.wrapper {
+  --icon-scale: 1;
+  --contact-scale: 2.5;
+  --art-scale: 0.95;
+  --bg-scale: 1;
+  --art-bg-scale: 1.4;
+
+  @media (min-width: 768px) {
+    --icon-scale: 1.3;
+    --contact-scale: 3.75;
+    --art-scale: 1.25;
+    --art-bg-scale: 1.8;
+    --bg-scale: 1.3;
+  }
+
+  position: relative;
+  display: inline-block;
+
+  overflow: visible;
+}
+
+/* prevent right-click downloading */
+.bg,
+.svg,
+.contactSvg,
+.artSvg {
+  pointer-events: none;
+}
+/* base styling */
+.wrapper a,
+.wrapper button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scale(var(--bg-scale));
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.artBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scale(var(--art-bg-scale));
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.svg {
+  position: relative;
+  z-index: 0;
+  transform: translateX(10px) translateY(10px) scale(var(--icon-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.contactSvg {
+  position: relative;
+  transform: translateX(290px) translateY(40px) scale(var(--contact-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+  will-change: transform;
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+  overflow: visible;
+}
+
+.artSvg {
+  position: relative;
+  transform: translateX(15px) translateY(30px) scale(var(--art-scale));
+  filter: drop-shadow(0px 4px 6px var(--color-shadow));
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.curvedText {
+  font-family: var(--font-heading);
+  font-size: 2em;
+  fill: var(--color-sextary);
+  stroke: var(--color-secondary);
+  stroke-width: 3;
+  overflow: visible;
+
+  path {
+    stroke: none;
+  }
+
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.contactText {
+  position: absolute;
+  top: -50;
+  left: -100;
+}
+
+/* mobile devices */
+@media (pointer: coarse) {
+  /* inView state for scrolling auto animation */
+  a[aria-current='page'] .wrapper,
+  .wrapper.inView {
+    .svg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--icon-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .contactSvg {
+      transform: translateX(200px) translateY(30px)
+        scale(calc(var(--contact-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .artSvg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--art-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .bg {
+      transform: scale(calc(var(--bg-scale) * 1.15));
+    }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
+    }
+
+    .curvedText {
+      transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
+    }
+
+    .contactText {
+      transform: rotate(50deg) scale(calc(var(--icon-scale) * 1.15));
+    }
+  }
+}
+
+/* pointer devices */
+@media (hover: hover) {
+  a[aria-current='page'] .wrapper,
+  .wrapper:hover,
+  .wrapper:active,
+  .wrapper.inView {
+    .svg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--icon-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .contactSvg {
+      transform: translateX(150px) translateY(30px)
+        scale(calc(var(--contact-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .artSvg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--art-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .bg {
+      transform: scale(calc(var(--bg-scale) * 1.15));
+    }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
+    }
+
+    .curvedText {
+      transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
+    }
+  }
+}
+
+/* Touch devices: active only */
+@media (hover: none) {
+  a[aria-current='page'] .wrapper,
+  .wrapper:active,
+  .wrapper.inView {
+    .svg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--icon-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .contactSvg {
+      transform: translateX(150px) translateY(30px)
+        scale(calc(var(--contact-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .artSvg {
+      transform: translateX(5px) translateY(5px)
+        scale(calc(var(--art-scale) * 1.15));
+      filter: drop-shadow(0px 8px 12px var(--color-shadow));
+    }
+
+    .bg {
+      transform: scale(calc(var(--bg-scale) * 1.15));
+    }
+    .artBg {
+      transform: scale(calc(var(--art-bg-scale) * 1.15));
+    }
+
+    .curvedText {
+      transform: rotate(30deg) scale(calc(var(--icon-scale) * 1.15));
+    }
+  }
+}

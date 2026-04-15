@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'tobytran.art',
+  title: {
+    template: '%s',
+    default: 'tobytran.art',
+  },
   description: "Toby Tran's artist site",
 };
 
