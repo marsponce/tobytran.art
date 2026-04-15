@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -17,6 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
+      <Script
+        src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
